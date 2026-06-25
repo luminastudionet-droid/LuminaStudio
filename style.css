@@ -14,20 +14,20 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { 
-    font-family: var(--font-main); 
-    background-color: var(--bg-dark); 
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
     background-image: radial-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 0), radial-gradient(rgba(255, 255, 240, 0.01) 1px, transparent 0);
     background-size: 24px 24px;
     background-position: 0 0, 12px 12px;
-    color: var(--text-main); 
-    line-height: 1.6; 
+    color: var(--text-main);
+    line-height: 1.6;
     opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.15s ease-out;
 }
 
 body.page-loaded { opacity: 1; }
-body.page-exit { opacity: 0; transform: scale(0.99); transition: opacity 0.3s ease, transform 0.3s ease; }
+body.page-exit { opacity: 0; transform: scale(0.99); transition: opacity 0.15s ease-out, transform 0.15s ease-out; }
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 /* --- Navegación --- */
