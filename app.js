@@ -85,6 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const linkWaPago = document.getElementById('pago-btn-wa');
             if(linkWaPago) linkWaPago.href = `https://wa.me/${data.contacto.whatsapp_numero}?text=Hola,%20adjunto%20el%20comprobante%20de%20pago%20para%20iniciar%20mi%20proyecto.`;
+
+            // ==========================================
+            // INTERCEPTOR DEL FORMULARIO HACIA WHATSAPP
+            // ==========================================
+            const formulario = document.querySelector('form');
+            if (formulario) {
+                formulario.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Detiene el error 405
+
+                    const inputs = formulario.querySelectorAll('input');
+                    const nombre = inputs[0] ? inputs[0].value : 'Cliente';
+                    const servicio = inputs[1] ? inputs[1].value : 'No especificado';
+                    const mensaje = formulario.querySelector('textarea') ? formulario.querySelector('textarea').value : '';
+
+                    const textoMensaje = `Hola Lumina Studio.\n\n*Nombre/Empresa:* ${nombre}\n*Servicio de interés:* ${servicio}\n*Detalles:* ${mensaje}`;
+
+                    const urlWa = `https://wa.me/${data.contacto.whatsapp_numero}?text=${encodeURIComponent(textoMensaje)}`;
+                    window.open(urlWa, '_blank');
+                });
+            }
+
         })
         .catch(error => {
             console.warn('Los datos fallaron, pero el sitio sigue activo:', error);
