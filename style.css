@@ -122,10 +122,27 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* --- Adaptación perfecta para Celulares --- */
 @media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
-    .hero-text p { margin: 0 auto 2rem; }
+    /* 1. Reducimos los espacios muertos a los lados y arriba */
+    .container { padding: 50px 15px; }
+    
+    /* 2. Achicamos los textos gigantes del inicio para que respiren */
+    .hero { flex-direction: column; text-align: center; min-height: auto; padding-top: 10px; }
+    .hero-text h1 { font-size: 2.1rem; margin-bottom: 0.8rem; } /* Antes era de 3.5rem */
+    .hero-text h2 { font-size: 0.9rem; margin-bottom: 1rem; }
+    .hero-text p { font-size: 0.95rem; margin: 0 auto 2rem; padding: 0 10px; }
+    
+    /* 3. Ajustamos los títulos de cada sección */
+    .section-title { font-size: 1.6rem; margin-bottom: 2rem; }
+    
+    /* 4. Desinflamos las tarjetas para que no se vean tan "gordas" en el cel */
+    .service-card, .project-card, .pricing-card { padding: 30px 20px; }
+    .pricing-card .price { font-size: 2rem !important; }
+    
+    /* 5. Ajustes de la barra superior */
+    nav { padding: 1rem 5%; }
+    .logo { font-size: 1.3rem; }
     .nav-links { display: none; }
     
-    /* En celulares quitamos el retraso de cascada porque las tarjetas se ven una a la vez de arriba hacia abajo */
+    /* Animaciones sin retraso en celular para no dejar la pantalla vacía */
     .scroll-visible { transition-delay: 0s !important; }
 }
