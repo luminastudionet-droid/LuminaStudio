@@ -22,11 +22,14 @@ body {
     background-position: 0 0, 12px 12px;
     color: var(--text-main);
     line-height: 1.6;
-    opacity: 0;
-    transition: opacity 0.15s ease-out;
+    animation: aparecer 0.2s ease-out forwards;
 }
 
-body.page-loaded { opacity: 1; }
+@keyframes aparecer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 body.page-exit { opacity: 0; transform: scale(0.99); transition: opacity 0.15s ease-out, transform 0.15s ease-out; }
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
