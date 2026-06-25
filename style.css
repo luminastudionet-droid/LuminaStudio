@@ -99,30 +99,33 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .payment-method:hover { transform: translateX(10px); border-color: var(--accent-teal); }
 
 /* =========================================
-   ANIMACIONES FLUIDAS (Cascada)
+   ANIMACIONES AL HACER SCROLL (EL PLUS)
    ========================================= */
-@keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
-.hero-text h2, .hero-text h1, .hero-text p, .hero-text .btn-primary, .hero-image, .section-title, .service-details, .terms-box { opacity: 0; }
-.hero-text h2 { animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.1s; }
-.hero-text h1 { animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s; }
-.hero-text p { animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s; }
-.hero-text .btn-primary { animation: fadeSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.4s; }
-.hero-image { animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.5s; }
-.section-title { animation: fadeSlideUp 0.7s ease forwards 0.2s; }
-.service-details { animation: fadeSlideUp 0.7s ease forwards 0.3s; }
-.terms-box { animation: fadeSlideUp 0.7s ease forwards 0.8s; }
+.scroll-anim {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Curva elástica estilo Apple para que floten suavemente */
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-.service-card, .project-card, .pricing-card { opacity: 0; }
-.services-grid a:nth-child(1) .service-card, .pricing-grid .pricing-card:nth-child(1), .projects-grid .project-card:nth-child(1) { animation: fadeSlideUp 0.7s ease forwards 0.3s; }
-.services-grid a:nth-child(2) .service-card, .pricing-grid .pricing-card:nth-child(2), .projects-grid .project-card:nth-child(2) { animation: fadeSlideUp 0.7s ease forwards 0.5s; }
-.services-grid a:nth-child(3) .service-card, .pricing-grid .pricing-card:nth-child(3), .projects-grid .project-card:nth-child(3) { animation: fadeSlideUp 0.7s ease forwards 0.7s; }
-.pricing-grid .pricing-card:nth-child(4) { animation: fadeSlideUp 0.7s ease forwards 0.9s; }
-.contact-info { opacity: 0; animation: fadeSlideUp 0.7s ease forwards 0.3s; }
-.contact-form { opacity: 0; animation: fadeSlideUp 0.7s ease forwards 0.5s; }
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* --- Responsive --- */
+/* Cascada: Hacemos que en computadora las tarjetas aparezcan una tras otra (Efecto dominó) */
+.services-grid a:nth-child(2) .scroll-visible, 
+.pricing-grid .pricing-card:nth-child(2) { transition-delay: 0.15s; }
+.services-grid a:nth-child(3) .scroll-visible, 
+.pricing-grid .pricing-card:nth-child(3) { transition-delay: 0.3s; }
+.pricing-grid .pricing-card:nth-child(4) { transition-delay: 0.45s; }
+
+/* --- Adaptación perfecta para Celulares --- */
 @media (max-width: 768px) {
     .hero { flex-direction: column; text-align: center; }
     .hero-text p { margin: 0 auto 2rem; }
     .nav-links { display: none; }
+    
+    /* En celulares quitamos el retraso de cascada porque las tarjetas se ven una a la vez de arriba hacia abajo */
+    .scroll-visible { transition-delay: 0s !important; }
 }
