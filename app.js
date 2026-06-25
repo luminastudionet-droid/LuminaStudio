@@ -87,4 +87,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
         .catch(error => console.error('Error al cargar datos:', error));
+// ==========================================
+            // EL PLUS: RASTREADOR DE SCROLL PARA ANIMACIONES
+            // ==========================================
+            
+            // 1. Seleccionamos todos los elementos que queremos que floten
+            const elementosAnimar = document.querySelectorAll('.service-card, .project-card, .pricing-card, .section-title, .hero-text, .hero-image, .glass-form, .contact-item, .terms-box');
+
+            // 2. A todos les ponemos la clase para ocultarlos al principio
+            elementosAnimar.forEach(el => el.classList.add('scroll-anim'));
+
+            // 3. Creamos el radar que vigila la pantalla
+            const observadorScroll = new IntersectionObserver((entradas) => {
+                entradas.forEach(entrada => {
+                    // Si el elemento entra en el campo de visión del celular...
+                    if (entrada.isIntersecting) {
+                        // Le damos la orden de aparecer
+                        entrada.target.classList.add('scroll-visible');
+                        // Dejamos de vigilarlo para que no se anime al revés si subimos
+                        observadorScroll.unobserve(entrada.target);
+                    }
+                });
+            }, { 
+                threshold: 0.15 // Se activa justo cuando asoma el 15% de la tarjeta
+            });
+
+            // 4. Encendemos el radar para cada tarjeta
+            elementosAnimar.forEach(el => observadorScroll.observe(el));
+    
 });
