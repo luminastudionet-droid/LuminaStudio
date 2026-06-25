@@ -114,5 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 4. Encendemos el radar para cada tarjeta
             elementosAnimar.forEach(el => observadorScroll.observe(el));
+    // ==========================================
+            // TRANSICIÓN FLUIDA ENTRE CLICS DE PÁGINAS
+            // ==========================================
+            setTimeout(() => { document.body.classList.add('page-loaded'); }, 50);
+
+            const enlacesMenu = document.querySelectorAll('.nav-links a, .logo, .service-link, .btn-primary, .btn-outline');
+            enlacesMenu.forEach(enlace => {
+                enlace.addEventListener('click', function(e) {
+                    const urlDestino = this.getAttribute('href');
+                    if (urlDestino && urlDestino !== '#' && !urlDestino.startsWith('https://wa.me')) {
+                        e.preventDefault();
+                        document.body.classList.add('page-exit');
+                        setTimeout(() => { window.location.href = urlDestino; }, 300);
+                    }
+                });
+            });
     
 });
