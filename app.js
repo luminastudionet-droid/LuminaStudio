@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
             // TRANSICIÓN FLUIDA ENTRE CLICS DE PÁGINAS
             // ==========================================
-            setTimeout(() => { document.body.classList.add('page-loaded'); }, 50);
+            setTimeout(() => { document.body.classList.add('page-loaded'); }, 10);
 
             const enlacesMenu = document.querySelectorAll('.nav-links a, .logo, .service-link, .btn-primary, .btn-outline');
             enlacesMenu.forEach(enlace => {
@@ -126,9 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (urlDestino && urlDestino !== '#' && !urlDestino.startsWith('https://wa.me')) {
                         e.preventDefault();
                         document.body.classList.add('page-exit');
-                        setTimeout(() => { window.location.href = urlDestino; }, 300);
+                        setTimeout(() => { window.location.href = urlDestino; }, 150);
                     }
                 });
             });
-    
-});
