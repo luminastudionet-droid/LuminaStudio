@@ -1,0 +1,69 @@
+{
+  "global": {
+    "nombre_marca": "Lumina<span>.</span>",
+    "boton_presupuesto": "SOLICITAR PRESUPUESTO",
+    "nav_inicio": "INICIO",
+    "nav_servicios": "SERVICIOS",
+    "nav_proyectos": "PROYECTOS",
+    "nav_contacto": "CONTACTO"
+  },
+  "inicio": {
+    "hero_etiqueta": "Con rigor técnico y análisis",
+    "hero_titulo": "Desarrollador de Software y Soluciones Web",
+    "hero_descripcion": "Transformo las necesidades de negocios locales en herramientas digitales funcionales, con un diseño limpio y código eficiente.",
+    "hero_boton": "CONOCER MÁS"
+  },
+  "servicios": {
+    "titulo_seccion": "Mis Servicios",
+    "srv1_titulo": "Desarrollo Web",
+    "srv1_desc": "Diseño y construcción de sitios web a medida, optimizados para una carga rápida.",
+    "srv2_titulo": "Gestión Comercial",
+    "srv2_desc": "Construcción de herramientas administrativas, facturas y paneles de control.",
+    "srv3_titulo": "Menú Digital QR",
+    "srv3_desc": "Menús interactivos con escaneo rápido y pedidos a WhatsApp."
+  },
+  "detalles_servicios": {
+    "web_titulo": "Desarrollo Web a Medida",
+    "web_sub": "Presencia digital profesional, rápida y segura para tu negocio.",
+    "gestion_titulo": "Gestión Comercial Automatizada",
+    "gestion_sub": "Sistematiza el papeleo y agiliza la atención a tus clientes.",
+    "menu_titulo": "Menú Digital Interactivo con QR",
+    "menu_sub": "Moderniza la atención en la mesa y centraliza tus pedidos."
+  },
+  "proyectos": {
+    "titulo_seccion": "Proyectos Destacados",
+    "proy1_titulo": "Taller Jaime",
+    "proy1_desc": "Sistema de facturación automatizada e integración de logotipos SVG para nitidez absoluta.",
+    "proy2_titulo": "Jornada Probatoria",
+    "proy2_desc": "Plataforma interactiva con registro QR y backend en Google Apps Script."
+  },
+  "presupuesto": {
+    "titulo": "Inversión y Planes de Desarrollo",
+    "descripcion": "Soluciones digitales accesibles y escalables para negocios locales en Panamá.",
+    "plan1_titulo": "Presencia Digital",
+    "plan1_precio": "$75",
+    "plan2_titulo": "Negocio Local",
+    "plan2_precio": "$150",
+    "plan3_titulo": "Interactivo / QR",
+    "plan3_precio": "$250",
+    "plan4_titulo": "Gestión a Medida",
+    "plan4_precio": "Desde $350",
+    "boton_pago": "ACEPTAR TÉRMINOS Y PROCEDER AL PAGO"
+  },
+  "pago": {
+    "titulo": "Formalizar Proyecto",
+    "subtitulo": "Métodos de Pago Disponibles",
+    "instruccion": "Por favor, realiza el abono inicial del 50% utilizando cualquiera de los siguientes métodos.",
+    "datos_banco": "Bac Credomatic<br>Cuenta de Ahorros: 11-68-43137<br>Nombre: Claudio Marín",
+    "datos_yappy": "Envío rápido vía número celular.<br>Teléfono: 6645-2159",
+    "boton_whatsapp": "ENVIAR COMPROBANTE POR WHATSAPP"
+  },
+  "contacto": {
+    "titulo": "¿Tienes dudas sobre los planes o quieres una solución a medida?",
+    "descripcion": "Escríbeme y analicemos lo que tu negocio necesita.",
+    "whatsapp_numero": "50765900364",
+    "whatsapp_texto": "Respuesta inmediata",
+    "ubicacion": "Penonomé, Coclé - Panamá",
+    "correo": "contacto@luminastudio.com"
+  }
+}
